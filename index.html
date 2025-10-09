@@ -115,28 +115,28 @@
 }
 
 
-/* === Premium.chat mobile sizing fix (v3: CSS-only, no JS) === */
+/* Premium.chat mobile sizing — CSS-only */
 @media (max-width: 960px){
-  /* Ensure the container never collapses on mobile */
+  /* Let the card/host grow to fit the iframe; do not clip */
   .hero .widget-wrapper{
     overflow: visible;
-    /* Provide a stable minimum viewport-relative space for the widget */
+    /* Give the section at least ~full screen height minus a little chrome */
     min-height: 640px; /* fallback */
-    min-height: calc(100vh - 220px);   /* classic vh */
-    min-height: calc(100dvh - 220px);  /* dynamic viewport (modern) */
-    min-height: calc(100lvh - 220px);  /* large viewport (prevents keyboard shrink) */
+    min-height: calc(100vh - 220px);
+    min-height: calc(100dvh - 220px); /* dynamic viewport (modern) */
+    min-height: calc(100lvh - 220px); /* large viewport (prevents keyboard shrink) */
   }
 
-  /* Let the iframe auto-size itself, but never get too small */
+  /* Let the widget iframe be full-width and never too short.
+     No fixed height; no !important. */
   .pchat-widget-placeholder iframe{
     display: block;
     width: 100%;
-    /* Progressive enhancement: enforce a reasonable floor without fighting widget resizer */
-    min-height: 640px; /* fallback */
+    min-height: 640px;
     min-height: calc(100vh - 220px);
     min-height: calc(100dvh - 220px);
     min-height: calc(100lvh - 220px);
-    max-height: none !important; /* avoid any accidental caps */
+    max-height: none;
   }
 }
 
