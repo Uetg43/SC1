@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Molly’s craving you – chat now</title>
+  <meta name="description" content="I’m Molly, half Dutch and fully addicted to a little trouble. I’m always here to tease you, spoil you, and keep you wanting more. Stick around… you never know how close we might get 😉" />
+  <meta property="og:title" content="Molly’s craving you – chat now" />
+  <meta property="og:description" content="I’m Molly, half Dutch and fully addicted to a little trouble. I’m always here to tease you, spoil you, and keep you wanting more." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#ff6ea6" />
+  <link rel="preconnect" href="https://premium.chat" crossorigin>
+  <style>
+    :root{--bg:#fff5f8;--bg-2:#ffeaf1;--card:#ffffff;--text:#222327;--muted:#5d6675;--accent:#ff6ea6;--accent-2:#ff9fc4;--accent-3:#ff7477;--ring:rgba(255,110,166,.35);--radius:18px}
+    *{box-sizing:border-box}
+    html,body{height:100%;width:100%;overflow-x:hidden}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial;color:var(--text);background:radial-gradient(900px 600px at 85% -20%,var(--bg-2),transparent 60%),linear-gradient(180deg,var(--bg) 0%,#fff 40%)}
+    .container{max-width:1100px;margin-inline:auto;padding:20px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-3));display:grid;place-items:center;box-shadow:0 8px 30px var(--ring);color:#fff;font-weight:800;flex:0 0 36px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
+    nav a:hover{color:var(--text)}
+
+    /* Buttons */
+    .btn{appearance:none;border:0;border-radius:14px;padding:12px 16px;font-weight:800;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 10px 30px var(--ring)}
+    .btn:active{transform:translateY(1px)}
+
+    /* Hero layout */
+    .hero{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:'photo widget';gap:18px;align-items:start;padding:12px 0}
+    .headline{font-size:clamp(24px,3vw,36px);line-height:1.1;margin:0 0 6px;font-weight:900}
+    .sub{color:var(--muted);font-size:clamp(15px,1.4vw,18px);margin:0 0 6px}
+    .microtrust{margin:4px 0 10px;font-size:13px;color:#6b7280}
+
+    .card{background:var(--card);border:1px solid #f1f1f4;border-radius:var(--radius);box-shadow:0 10px 30px rgba(248,119,157,.08)}
+
+    /* Photo column */
+    .hero .image-card{grid-area:photo;justify-self:center;max-width:520px;width:100%}
+    .hero .image-media{aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius)}
+    .hero .image-media img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+    .hero .image-card img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Widget column */
+    .hero .widget-wrapper{grid-area:widget;min-height:520px;padding:12px;animation:fadeIn .6s ease .04s both;position:relative}
+    .hero .widget-wrapper::after{content:'';position:absolute;inset:-2px;border-radius:calc(var(--radius)+2px);pointer-events:none;background:linear-gradient(90deg,rgba(255,110,166,0),rgba(255,110,166,.35),rgba(255,110,166,0));opacity:0;animation:pulseGlow 6s ease .8s 1}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    @keyframes pulseGlow{0%{opacity:0}10%{opacity:.6}60%{opacity:.15}100%{opacity:0}}
+
+    /* Slider */
+    .slider{position:relative;height:100%}
+    .slides{display:flex;height:100%;transition:transform .45s ease;will-change:transform}
+    .slide{min-width:100%;height:100%}
+    .slider-nav{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px}
+    .dot{width:8px;height:8px;border-radius:999px;background:#ffd1e6;border:1px solid #ff9cc9;opacity:.9;cursor:pointer}
+    .dot.active{background:#ff6ea6}
+
+    /* Sections */
+    .section{padding:28px 0}
+    h2{margin:0 0 14px;font-size:22px}
+
+    .how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .how .step{display:flex;gap:12px;align-items:flex-start;padding:14px}
+    .step .num{flex:0 0 32px;height:32px;border-radius:999px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800}
+    .step p{margin:2px 0 0;color:var(--muted)}
+
+    /* Sticky mobile CTA */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:12px;z-index:9999;display:flex;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s ease;padding:0 12px}
+    .sticky-cta .bar{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(90deg,#ff6ea6,#ff7477);color:#fff;border-radius:999px;padding:14px 18px;box-shadow:0 10px 30px rgba(248,119,157,.35);border:none;font-weight:800;cursor:pointer}
+    @supports (padding: max(0px)){
+      .sticky-cta{bottom: max(12px, env(safe-area-inset-bottom));}
+    }
+
+    footer{padding-top:18px;border-top:1px solid #f1e6ec;color:var(--muted)}
+
+    /* Mobile */
+    @media (max-width:960px){
+      .container{padding:16px}
+      .hero{grid-template-columns:1fr;grid-template-areas:'photo' 'widget';gap:12px}
+      .hero .image-card{order:0;max-height:clamp(260px,45vh,420px)}
+      .how{grid-template-columns:1fr}
+      .how .step{padding:12px}
+    }
+  
+/* mobile row enforcement */
+.trust-row{flex-wrap:nowrap !important}
+.trust-badge{white-space:nowrap}
+@media (max-width:480px){
+  .trust-row{gap:6px !important}
+  .trust-badge{font-size:11px !important;padding:5px 8px !important}
+}
+/* Ensure CTA starts hidden but clickable when shown */
+.sticky-cta{opacity:0;pointer-events:none;transition:opacity .25s ease}
+    
+/* === Desktop-only layout refresh === */
+@media (min-width: 980px){
+  .page{max-width:1100px;margin:0 auto}
+  .section{padding-left:24px;padding-right:24px}
+  /* Two-column grid for About + How */
+  .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  /* Cards tidy up */
+  .section .card{box-shadow:0 4px 14px rgba(0,0,0,.05)}
+  /* Testimonials full-width but constrained */
+  #say .quotes, #say #photoSlider{max-width:900px;margin:0 auto}
+  /* Footer center */
+  .site-footer{text-align:center}
+}
+/* Progressive enhancement: on desktop, place About + How side-by-side without changing HTML order */
+@media (min-width: 980px){
+  /* Use the parent container of about/how as a grid if they are siblings */
+  #about + #how{display:block}
+  #about, #how{margin-top:0}
+  /* Turn the immediate parent into grid by targeting the common parent .page > main wrapper */
+}
+
+
+/* === Premium.chat mobile sizing fix (v3: CSS-only, no JS) === */
+@media (max-width: 960px){
+  /* Ensure the container never collapses on mobile */
+  .hero .widget-wrapper{
+    overflow: visible;
+    /* Provide a stable minimum viewport-relative space for the widget */
+    min-height: 640px; /* fallback */
+    min-height: calc(100vh - 220px);   /* classic vh */
+    min-height: calc(100dvh - 220px);  /* dynamic viewport (modern) */
+    min-height: calc(100lvh - 220px);  /* large viewport (prevents keyboard shrink) */
+  }
+
+  /* Let the iframe auto-size itself, but never get too small */
+  .pchat-widget-placeholder iframe{
+    display: block;
+    width: 100%;
+    /* Progressive enhancement: enforce a reasonable floor without fighting widget resizer */
+    min-height: 640px; /* fallback */
+    min-height: calc(100vh - 220px);
+    min-height: calc(100dvh - 220px);
+    min-height: calc(100lvh - 220px);
+    max-height: none !important; /* avoid any accidental caps */
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand"><div class="logo">♡</div><strong>Molly</strong></div>
+      <nav><a href="#how">How it works</a></nav>
+    </header>
+
+    <section class="hero" aria-labelledby="heroTitle">
+      <!-- Photo slider -->
+      <div class="image-card card">
+        <div class="image-media">
+          <div class="slider" id="photoSlider" aria-label="Molly photos">
+        <div class="slides">
+  <div class="slide">
+    <picture>
+      <source srcset="images/ava-520.avif 520w, images/ava-1040.avif 1040w" type="image/avif" />
+      <source srcset="images/ava-520.webp 520w, images/ava-1040.webp 1040w" type="image/webp" />
+      <source srcset="images/ava-520.jpg 520w, images/ava-1040.jpg 1040w" type="image/jpeg" />
+      <img src="images/ava-520.jpg" alt="Molly smiling" loading="lazy" />
+    </picture>
+  </div>
+  <div class="slide">
+    <picture>
+      <source srcset="images/ava2-520.avif 520w, images/ava2-1040.avif 1040w" type="image/avif" />
+      <source srcset="images/ava2-520.webp 520w, images/ava2-1040.webp 1040w" type="image/webp" />
+      <source srcset="images/ava2-520.jpg 520w, images/ava2-1040.jpg 1040w" type="image/jpeg" />
+      <img src="images/ava2-520.jpg" alt="Molly lifestyle" loading="lazy" />
+    </picture>
+  </div>
+  <div class="slide">
+    <picture>
+      <source srcset="images/ava3-520.avif 520w, images/ava3-1040.avif 1040w" type="image/avif" />
+      <source srcset="images/ava3-520.webp 520w, images/ava3-1040.webp 1040w" type="image/webp" />
+      <source srcset="images/ava3-520.jpg 520w, images/ava3-1040.jpg 1040w" type="image/jpeg" />
+      <img src="images/ava3-520.jpg" alt="Molly casual" loading="lazy" />
+    </picture>
+  </div>
+</div>
+
+            <div class="slider-nav" role="tablist">
+              <span class="dot active" role="tab" aria-selected="true"></span>
+              <span class="dot" role="tab" aria-selected="false"></span>
+              <span class="dot" role="tab" aria-selected="false"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Widget -->
+      <div class="card widget-wrapper" id="chat">
+        <h1 id="heroTitle" class="headline">Molly’s craving you – chat now</h1>
+        
+        <div class="trust-row" aria-label="Trust cues" style="display:flex;gap:8px;flex-wrap:nowrap;margin:6px 0 12px">
+          <span class="trust-badge" style="display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#fff4f9;border:1px solid #ffd6ea;color:#8a1049;font-weight:700;font-size:12px;white-space:nowrap">🔒 100% Just Us</span>
+          <span class="trust-badge" style="display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#fff4f9;border:1px solid #ffd6ea;color:#8a1049;font-weight:700;font-size:12px;white-space:nowrap">💋 It’s Really Me</span>
+          <span class="trust-badge" style="display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#fff4f9;border:1px solid #ffd6ea;color:#8a1049;font-weight:700;font-size:12px;white-space:nowrap">⚡ Instant fun</span>
+        </div>
+        <div class="pchat-widget-placeholder"></div>
+        <script type='text/javascript'>(function(d,w,i){w.premiumchat = w.premiumchat || [];var p = w.premiumchat; if(!p.length){(()=>{w.premiumchat_domain='https://premium.chat/';var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src=w.premiumchat_domain+'embed/js/widget.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss);})();}p.push({'num':p.length,'wid':i});})(document, window, 790806);
+// Desktop structural enhancement: group #about and #how side-by-side without changing mobile
+(function(){
+  const isDesktop = () => window.matchMedia('(min-width:980px)').matches;
+  function enhance(){
+    const about = document.getElementById('about');
+    const how = document.getElementById('how');
+    if (!about || !how) return;
+    // If they already share a wrapper with class 'section-grid', skip
+    const parent = about.parentElement;
+    if (parent && parent === how.parentElement){
+      if (!parent.classList.contains('section-grid') && isDesktop()){
+        parent.classList.add('section-grid');
+      } else if (parent.classList.contains('section-grid') && !isDesktop()){
+        parent.classList.remove('section-grid');
+      }
+    }
+  }
+  window.addEventListener('resize', enhance, {passive:true});
+  window.addEventListener('load', enhance);
+  document.addEventListener('DOMContentLoaded', enhance);
+  enhance();
+})();
+
+  </script>
+        <p class="sub" style="font-weight:700;color:#a31257;margin-top:10px">One-on-one with me is limited… are you the lucky one?</p>
+      </div>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <h2>About Molly</h2>
+      <p class="sub" style="max-width:70ch">I’m Molly, half Dutch and fully addicted to a little trouble. I’m always here to tease you, spoil you, and keep you wanting more. Stick around… you never know how close we might get 😉</p>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <h2>How it works</h2>
+      <div class="how">
+        <div class="card step"><div class="num">1</div><div><strong>Start Chat</strong><p>Tap Let’s Chat Now to open Molly’s private chat.</p></div></div>
+        <div class="card step"><div class="num">2</div><div><strong>Log In / Sign Up</strong><p>Quickly log in or create an account to get connected.</p></div></div>
+        <div class="card step"><div class="num">3</div><div><strong>Chat &amp; Flirt</strong><p>You’re in instantly—just you and me. 😉</p></div></div>
+    </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="section" id="social">
+      <h2>What people say</h2>
+      <div class="social-proof" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="quote" style="background:#fff;border:1px solid #f0f0f2;border-radius:14px;padding:14px"><p>“So much fun — felt really personal.”</p><span class="muted">— J.M.</span></div>
+        <div class="quote" style="background:#fff;border:1px solid #f0f0f2;border-radius:14px;padding:14px"><p>“Cheeky and sweet at the same time. Loved it.”</p><span class="muted">— K.</span></div>
+      </div>
+      <p class="sub" style="margin-top:10px">🔒 Private & secure system</p>
+    </section>
+
+    <footer class="section site-footer"><p class="sub">© Molly — Real flirty chat, instantly. Powered by Premium.chat.</p></footer>
+  </div>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <button class="bar" id="ctaMobile" aria-label="Chat with Molly now">💬 Chat with Molly now</button>
+  </div>
+
+  <script>
+    // Simple slider (init + autoplay + dots)
+    (function(){
+      const slider = document.getElementById('photoSlider'); if(!slider) return;
+      const track = slider.querySelector('.slides'); const dots = Array.from(slider.querySelectorAll('.dot'));
+      let i = 0; const go = idx=>{ i=idx; track.style.transform = `translateX(${-idx*100}%)`; dots.forEach((d,k)=>d.classList.toggle('active',k===idx)); };
+      go(0);
+      dots.forEach((d,idx)=> d.addEventListener('click', ()=> go(idx)) );
+      let t = setInterval(()=> go((i+1)%dots.length), 5000); slider.addEventListener('pointerdown', ()=> { if(t){ clearInterval(t); t=null; } });
+    })();
+
+    // Scroll helper
+    function scrollToWidgetBottom(){
+      const widget = document.getElementById('chat'); if(!widget) return;
+      const rect = widget.getBoundingClientRect(); const absoluteBottom = (window.pageYOffset||document.documentElement.scrollTop||0) + rect.bottom;
+      const target = Math.max(0, absoluteBottom - window.innerHeight + 24);
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    }
+
+    // Wire CTAs
+    document.getElementById('ctaMobile')?.addEventListener('click', scrollToWidgetBottom);
+
+    // Sticky CTA: show when you've scrolled PAST the chat widget and it's mostly out of view
+(function(){
+  const cta = document.getElementById('stickyCta');
+  const ctaBtn = document.getElementById('ctaMobile');
+  const wrapper = document.getElementById('chat'); // wrapper around the Premium.chat embed
+  if(!cta || !wrapper) return;
+
+  // Prefer the actual Premium.chat mount point if present
+  const target = wrapper.querySelector('.pchat-widget-placeholder') || wrapper;
+
+  // Keep a stable measurement of visibility for the wrapper
+  let ratio = 1;
+  const io = new IntersectionObserver((entries)=>{
+    for(const e of entries){
+      if(e.target === wrapper){
+        ratio = Math.max(0, Math.min(1, e.intersectionRatio || 0));
+        update();
+      }
+    }
+  }, {threshold:[0,0.2,0.5,1]});
+  io.observe(wrapper);
+
+  function show(){
+    cta.style.opacity = '1';
+    cta.style.pointerEvents = 'auto';
+    cta.setAttribute('aria-hidden','false');
+  }
+  function hide(){
+    cta.style.opacity = '0';
+    cta.style.pointerEvents = 'none';
+    cta.setAttribute('aria-hidden','true');
+  }
+
+  function isPastWidget(){
+    const r = wrapper.getBoundingClientRect();
+    // Wrapper fully above viewport
+    return r.bottom <= 0;
+  }
+
+  function update(){
+    if (isPastWidget() && ratio < 0.2){
+      show();
+    } else {
+      hide();
+    }
+  }
+
+  // Smooth scroll helpers
+  function scrollWindowTo(el){
+    const r = el.getBoundingClientRect();
+    const ctaHeight = (cta && cta.offsetHeight) ? cta.offsetHeight : 0;
+    const targetY = window.pageYOffset + r.top - 12 - ctaHeight;
+    const top = Math.max(0, targetY);
+    if ('scrollBehavior' in document.documentElement.style){
+      window.scrollTo({ top, behavior:'smooth' });
+    } else {
+      window.scrollTo(0, top);
+    }
+  }
+
+  function findScrollParent(el){
+    let p = el.parentElement;
+    while(p){
+      const s = getComputedStyle(p);
+      const canScroll = /(auto|scroll)/.test(s.overflow + s.overflowY + s.overflowX);
+      if (canScroll && p.scrollHeight > p.clientHeight) return p;
+      p = p.parentElement;
+    }
+    return null;
+  }
+
+  function scrollSmartTo(el){
+    const sp = findScrollParent(el);
+    if (sp){
+      const r = el.getBoundingClientRect();
+      const spRect = sp.getBoundingClientRect();
+      const diff = r.top - spRect.top - 12;
+      try { sp.scrollBy({ top: diff, behavior:'smooth' }); } catch(e){ sp.scrollTop += diff; }
+    } else {
+      scrollWindowTo(el);
+    }
+  }
+
+  function handleClick(e){
+    e.preventDefault();
+    e.stopPropagation();
+    hide(); // hide first so it doesn't cover the target
+    scrollSmartTo(target);
+  }
+
+  // Click handlers
+  [cta, ctaBtn].forEach(el => { if (el) el.addEventListener('click', handleClick, {passive:false}); });
+
+  // Update on viewport changes
+  ['scroll','resize','orientationchange'].forEach(evt => window.addEventListener(evt, update, {passive:true}));
+  window.addEventListener('load', update);
+  document.addEventListener('DOMContentLoaded', update);
+  update();
+})();
+
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
