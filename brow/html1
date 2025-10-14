@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Molly • A little note for you (Version 1)</title>
+<style>
+      a{color:#ff2e86;text-decoration:none}
+      img{border:0;line-height:100%;outline:none;text-decoration:none}
+      table{border-collapse:collapse}
+
+      /* Mobile */
+      @media only screen and (max-width:600px){
+        .container{width:100% !important}
+        .stack{display:block !important;width:100% !important}
+        .px{padding-left:18px !important;padding-right:18px !important}
+        .center-sm{text-align:center !important}
+        .btn{display:block !important;width:auto !important;margin:12px auto !important;text-align:center !important}
+        .hero-img{max-width:55% !important;margin:0 auto 16px auto !important;display:block !important}
+        .subhead{font-size:14px !important}
+        .letter{font-size:17px !important;line-height:1.9 !important;max-width:360px;margin:0 auto}
+      }
+
+      :root{color-scheme:light dark}
+      @media (prefers-color-scheme: dark){
+        body, .bg{background:#0f0f12 !important;color:#ffffff !important}
+        .card{background:#18181c !important}
+        .muted{color:#bdbdc7 !important}
+        .btn-a{background:#ff2e86 !important;color:#fff !important}
+        a{color:#ff5aa3 !important}
+        td, p, .letter{color:#ffffff !important}
+      }
+
+      /* Hovers */
+      .btn-a:hover{background:#ff5aa3 !important;box-shadow:0 10px 22px rgba(255,90,163,.28),0 2px 8px rgba(0,0,0,.08) !important}
+      .btn-ghost:hover{border-color:#ff5aa3 !important;color:#ff5aa3 !important;box-shadow:0 8px 18px rgba(255,90,163,.18),0 2px 6px rgba(0,0,0,0.06) !important}
+    </style>
+</head>
+<body style="margin:0;padding:0;background:#f7f7fb;">
+<!-- Preheader -->
+<div style="display:none;max-height:0;overflow:hidden;opacity:0">Can’t sleep? Me neither. Come keep me company. Private &amp; safe — Molly</div>
+<center class="bg" style="width:100%;background:#f7f7fb;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+<tr>
+<td align="center">
+<table border="0" cellpadding="0" cellspacing="0" class="container" role="presentation" style="width:600px;max-width:100%;" width="600">
+<tr>
+<td class="px" style="padding:22px 26px 0;">
+<!-- View in browser -->
+<table role="presentation" style="margin-bottom:8px;" width="100%">
+<tr>
+<td align="center" style="font:400 12px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#8a8da0;">
+<a href="{$url}" style="color:#8a8da0;text-decoration:underline;">View in browser</a>
+</td>
+</tr>
+</table>
+<!-- Header -->
+<table role="presentation" width="100%" style="background:#fce8f2;border-radius:16px;">
+  <tr>
+    <td align="center" style="text-align:center;padding:14px 16px;">
+      <a href="https://www.sexyconnections.com/" style="text-decoration:none;display:block;">
+        <div style="font:900 22px/1.3 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#17171b;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;">
+          Molly • Private Chat
+        </div>
+        <div style="font:600 13px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#6b6d80;">
+          Late-night company? I’m awake. Come say hi.
+        </div>
+      </a>
+    </td>
+  </tr>
+</table>
+
+<!-- Spacer (Outlook-safe, 16px) -->
+<table role="presentation" width="100%">
+  <tr>
+    <td style="font-size:0;line-height:0;height:16px;mso-line-height-rule:exactly;">&nbsp;</td>
+  </tr>
+</table>
+
+<!-- Hero + Letter -->
+<table role="presentation" width="100%">
+<tr>
+<td class="stack" style="width:35%;padding-right:12px;vertical-align:top;">
+<a href="https://www.sexyconnections.com/">
+<img alt="Molly smiling — tap to chat" aria-label="Molly smiling — tap to chat" class="hero-img" role="img" src="https://www.sexyconnections.com/images/ava-1040.jpg" style="max-width:100%;height:auto;border:6px solid #f0eef7;padding:6px;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.15);display:block;margin:0 auto" width="210"/>
+</a>
+</td>
+<td class="stack letter" style="width:65%;vertical-align:top;padding-left:24px;font:400 16px/1.9 Georgia,serif;color:#2f2a3a;">
+<p style="margin:0 0 10px;">Dear Honey,</p>
+<p style="margin:0 0 10px;">It’s late, the lights are low, and I’m restless. What I want right now? Someone warm on the other end of my screen… someone like you.</p>
+<p style="margin:0 0 10px;">I’m Molly, and I’m looking for more than small talk. I want hot chemistry.</p>
+<p style="margin:0 0 10px;">Forget scripts. Forget rules. Just us.</p>
+<p style="margin:0 0 18px;">Care to keep me company tonight?<br/>Yours,<br/><span style="font-family:'Brush Script MT',cursive;font-size:24px;color:#ff2e86;border-bottom:1px solid #ffccd9;display:inline-block;transform:rotate(-3deg);">Molly</span></p>
+<!-- Primary CTA (Bulletproof + responsive) -->
+<!--[if mso]>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="left" style="margin-bottom:12px;">
+                          <tr>
+                            <td>
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://www.sexyconnections.com/" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="50%" strokecolor="#ff2e86" fillcolor="#ff2e86">
+                                <w:anchorlock/>
+                                <center style="color:#ffffff;font-family:Segoe UI, Arial, sans-serif;font-size:15px;font-weight:700;">Chat with Molly now</center>
+                              </v:roundrect>
+                            </td>
+                          </tr>
+                        </table>
+                        <![endif]-->
+<!--[if !mso]><!-->
+<a aria-label="Chat with Molly now — opens Molly’s private chat" class="btn btn-a" href="https://www.sexyconnections.com/" style="background:#ff2e86;color:#ffffff;padding:14px 24px;border-radius:16px;font:700 15px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial;display:inline-block;box-shadow:0 8px 18px rgba(255,46,134,0.28),0 2px 6px rgba(0,0,0,0.08);mso-padding-alt:0;">Chat with Molly now</a>
+<!--<![endif]-->
+</td>
+</tr>
+</table>
+
+<hr style="border:0;border-top:1px solid #eceaf3;margin:24px 0 12px;"/>
+<!-- How it works -->
+<table class="card" role="presentation" style="background:#ffffff;border-radius:16px;overflow:hidden;margin-top:8px;" width="100%">
+<tr>
+<td style="padding:12px 18px 6px;font:700 14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#17171b;">How it works</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:0 18px 16px;">
+                        <table role="presentation" width="100%">
+                          <tr>
+                            <td class="stack" align="center" style="width:25%;padding:10px;font:600 13px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#464a5f;vertical-align:top;">
+  <img src="https://www.sexyconnections.com/images/icon-step1-tap-72.png" width="36" height="36" alt="Tap the button" style="display:block;margin:0 auto 6px auto;border:0;">
+  <span>1. Tap the button</span>
+</td>
+<td class="stack" align="center" style="width:25%;padding:10px;font:600 13px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#464a5f;vertical-align:top;">
+  <img src="https://www.sexyconnections.com/images/icon-step2-sayhi-72.png" width="36" height="36" alt="Say hi" style="display:block;margin:0 auto 6px auto;border:0;">
+  <span>2. Say hi</span>
+</td>
+<td class="stack" align="center" style="width:25%;padding:10px;font:600 13px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#464a5f;vertical-align:top;">
+  <img src="https://www.sexyconnections.com/images/icon-step3-chat-flirt-72.png" width="36" height="36" alt="Chat &amp; Flirt" style="display:block;margin:0 auto 6px auto;border:0;">
+  <span>3. Chat &amp; Flirt</span>
+</td>
+<td class="stack" align="center" style="width:25%;padding:10px;font:600 13px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#464a5f;vertical-align:top;">
+  <img src="https://www.sexyconnections.com/images/icon-step4-private-safe-72.png" width="36" height="36" alt="Private &amp; safe" style="display:block;margin:0 auto 6px auto;border:0;">
+  <span>4. Private &amp; safe</span>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- Secondary CTA (Bulletproof) -->
+<table role="presentation" style="margin-top:16px;" width="100%">
+<tr>
+<td align="center">
+<!--[if mso]>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td>
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://www.sexyconnections.com/" style="height:42px;v-text-anchor:middle;width:210px;" arcsize="50%" strokecolor="#ff2e86" fillcolor="#ffffff">
+                                <w:anchorlock/>
+                                <center style="color:#ff2e86;font-family:Segoe UI, Arial, sans-serif;font-size:14px;font-weight:700;">Maybe later →</center>
+                              </v:roundrect>
+                            </td>
+                          </tr>
+                        </table>
+                        <![endif]-->
+<!--[if !mso]><!-->
+<a aria-label="Maybe later — link to Molly’s private chat" class="btn btn-ghost" href="https://www.sexyconnections.com/" style="border:2px solid #ff2e86;color:#ff2e86;padding:12px 22px;border-radius:16px;font:700 14px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial;display:inline-block;background:#ffffff;box-shadow:0 6px 14px rgba(255,46,134,0.18),0 2px 6px rgba(0,0,0,0.06);mso-padding-alt:0;">Maybe later →</a>
+<!--<![endif]-->
+</td>
+</tr>
+</table>
+<!-- Footer -->
+<table role="presentation" style="margin-top:24px;" width="100%">
+<tr>
+<td>
+<hr style="border:0;border-top:1px solid #eceaf3;margin:0;"/>
+</td>
+</tr>
+</table>
+<table role="presentation" width="100%">
+<tr>
+<td style="height:36px;line-height:36px;font-size:0;">‌</td>
+</tr>
+</table>
+<table role="presentation" width="100%">
+<tr>
+<td align="center" style="padding:0 16px 28px;font:400 12px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#8a8da0;">
+<a href="{$unsubscribe}" style="color:#8a8da0;text-decoration:underline;">Unsubscribe</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+<pre style="display:none;visibility:hidden;max-height:0;overflow:hidden;">Dear Honey,\n\nIt’s late, the lights are low, and I’m restless. What I want right now? Someone warm on the other end of my screen… someone like you.\n\nI’m Molly, and I’m looking for more than small talk. I want hot chemistry.\n\nForget scripts. Forget rules. Just us.\n\nCare to keep me company tonight?\nYours, Molly\n\nChat with Molly now: https://www.sexyconnections.com/\nView in browser: {$url}\nUnsubscribe: {$unsubscribe}</pre>
+</body>
+</html>
